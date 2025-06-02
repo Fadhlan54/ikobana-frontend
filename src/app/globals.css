@@ -1,0 +1,66 @@
+@import "tailwindcss";
+
+/* :root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+} */
+
+@theme {
+  /* Alert Colors */
+  --color-alert-success: #17d079;
+  --color-alert-success-2: #23a96a;
+  --color-alert-success-3: #178e57;
+
+  --color-alert-danger: #f54a45;
+  --color-alert-danger-2: #dc3d38;
+  --color-alert-danger-3: #c3302c;
+  --color-alert-danger-soft: #fee7e6;
+
+  --color-alert-warning: #f79009;
+  --color-alert-warning-2: #dc6803;
+  --color-alert-warning-3: #b54708;
+  --color-alert-warning-soft: #fffaeb;
+
+  --color-alert-info: #0ba5ec;
+
+  /* Primary Colors */
+  --color-primary-1: #00b4d8;
+  --color-primary-2: #0096c7;
+  --color-primary-3: #0077b6;
+
+  /* Neutral Colors */
+  --color-neutral-1: #ffffff;
+  --color-neutral-2: #f2f4f7;
+  --color-neutral-3: #d0d5dd;
+  --color-neutral-4: #adb5bd;
+  --color-neutral-5: #667085;
+  --color-neutral-6: #475467;
+  --color-neutral-7: #212529;
+  --color-neutral-8: #101828;
+  --color-neutral-9: #000000;
+
+  --color-accent-1: #caf0f8;
+  --color-accent-2: #ade8f4;
+  --color-accent-3: #5bbcd0;
+}
