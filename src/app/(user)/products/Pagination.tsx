@@ -8,7 +8,7 @@ import {
   FiChevronsRight,
 } from "react-icons/fi";
 
-export default function Pagination({ totalPage }: { totalPage: number }) {
+function PaginationComponent({ totalPage }: { totalPage: number }) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const pathname = usePathname();
@@ -80,4 +80,8 @@ export default function Pagination({ totalPage }: { totalPage: number }) {
       </button>
     </div>
   );
+}
+
+export default function Pagination({ totalPage }: { totalPage: number }) {
+  return <PaginationComponent totalPage={totalPage} />;
 }

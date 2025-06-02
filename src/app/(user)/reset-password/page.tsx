@@ -2,7 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, Suspense } from "react";
 import Button from "@/components/elements/Button";
 import LoadingSpinner from "@/components/elements/loading/LoadingSpinner";
 import { useMutation } from "@tanstack/react-query";
@@ -17,7 +17,7 @@ type FormValues = {
   confirmPassword: string;
 };
 
-export default function ResetPassword() {
+function ResetPassword() {
   const searchParams = useSearchParams();
   const token = searchParams.get("token");
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -194,5 +194,13 @@ function Card({
     >
       {children}
     </div>
+  );
+}
+
+export default function ResetPasswordPage() {
+  return (
+    <Suspense>
+      <ResetPassword />
+    </Suspense>
   );
 }

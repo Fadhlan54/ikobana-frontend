@@ -5,7 +5,7 @@ import TextInput from "@/components/elements/inputs/TextInput";
 import { useForm } from "react-hook-form";
 import { MdOutlineFilterAlt } from "react-icons/md";
 import { useRouter, useSearchParams, usePathname } from "next/navigation";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import useDebounce from "@/hooks/useDebounce";
 import { useMutation } from "@tanstack/react-query";
 import { getAllCategories } from "@/service/category.service";
@@ -22,7 +22,7 @@ type CategoryResponse = {
   name: string;
 };
 
-export default function ProductFilter() {
+function Filter() {
   const {
     register,
     watch,
@@ -187,5 +187,13 @@ function LoadingCategory() {
       />
       <SkeletonLoading height="16px" width="72px" />
     </div>
+  );
+}
+
+export default function ProductFilter() {
+  return (
+    <Suspense>
+      <Filter />
+    </Suspense>
   );
 }

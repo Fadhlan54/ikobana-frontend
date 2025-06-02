@@ -10,14 +10,14 @@ import { getAllProducts } from "@/service/product.service";
 import { useMutation } from "@tanstack/react-query";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { Suspense, useCallback, useEffect, useMemo, useState } from "react";
 import Pagination from "./Pagination";
 import TextInput from "@/components/elements/inputs/TextInput";
 import { useForm } from "react-hook-form";
 import { IoMdSearch } from "react-icons/io";
 import useDebounce from "@/hooks/useDebounce";
 
-export default function ProductCardContainer() {
+function Card() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pageParam = searchParams.get("page");
@@ -204,5 +204,13 @@ export default function ProductCardContainer() {
       </div>
       <Pagination totalPage={totalPage} />
     </div>
+  );
+}
+
+export default function ProductCardContainer() {
+  return (
+    <Suspense>
+      <Card />
+    </Suspense>
   );
 }

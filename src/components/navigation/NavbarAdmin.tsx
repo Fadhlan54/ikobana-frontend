@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Cookies from "js-cookie";
@@ -16,7 +16,7 @@ import { Tooltip } from "react-tooltip";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 
-export default function NavbarAdmin() {
+function NavbarAdminComponent() {
   const dispatch = useAppDispatch();
   const user = useAppSelector(selectUser);
   const at = Cookies.get("at");
@@ -191,3 +191,11 @@ const ProfileDropdown = ({ email }: ProfileDropdownProps) => {
     </div>
   );
 };
+
+export default function NavbarAdmin() {
+  return (
+    <Suspense>
+      <NavbarAdminComponent />
+    </Suspense>
+  );
+}

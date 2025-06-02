@@ -6,10 +6,10 @@ import { useMutation } from "@tanstack/react-query";
 import { AxiosError } from "axios";
 import { useSearchParams } from "next/navigation";
 import { useRouter } from "next/navigation";
-import { useEffect } from "react";
+import { Suspense, useEffect } from "react";
 import { toast } from "react-toastify";
 
-export default function VerifyEmail() {
+function VerifyEmail() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const token = searchParams.get("token");
@@ -55,5 +55,13 @@ export default function VerifyEmail() {
         </p>
       </div>
     </div>
+  );
+}
+
+export default function VerifyEmailPage() {
+  return (
+    <Suspense>
+      <VerifyEmail />
+    </Suspense>
   );
 }

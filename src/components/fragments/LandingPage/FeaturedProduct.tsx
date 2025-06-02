@@ -7,6 +7,7 @@ export default function FeaturedProduct() {
       <SectionTitle title="Produk Unggulan" />
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 px-4 lg:px-8">
         <ProductCard
+          id={1}
           name="Dumpling Ayam"
           desc="Isian ayam gurih dengan kulit lembut"
           weight={900}
@@ -14,6 +15,7 @@ export default function FeaturedProduct() {
           price={20000}
         />
         <ProductCard
+          id={2}
           name="Dumpling Ayam"
           desc="Isian ayam gurih dengan kulit lembut"
           weight={900}
@@ -21,6 +23,7 @@ export default function FeaturedProduct() {
           price={20000}
         />
         <ProductCard
+          id={3}
           name="Dumpling Ayam"
           desc="Isian ayam gurih dengan kulit lembut"
           weight={900}
@@ -28,6 +31,7 @@ export default function FeaturedProduct() {
           price={20000}
         />
         <ProductCard
+          id={4}
           name="Dumpling Ayam"
           desc="Isian ayam gurih dengan kulit lembut"
           weight={900}

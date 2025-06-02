@@ -1,6 +1,6 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import { Suspense, useCallback, useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Cookies from "js-cookie";
@@ -18,7 +18,7 @@ import { Tooltip } from "react-tooltip";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { toast } from "react-toastify";
 
-export default function Navbar() {
+function NavbarComponent() {
   const dispatch = useAppDispatch();
   const user = useAppSelector(selectUser);
   const at = Cookies.get("at");
@@ -246,3 +246,11 @@ const ProfileDropdown = ({ name, email }: ProfileDropdownProps) => {
     </div>
   );
 };
+
+export default function Navbar() {
+  return (
+    <Suspense>
+      <NavbarComponent />
+    </Suspense>
+  );
+}
