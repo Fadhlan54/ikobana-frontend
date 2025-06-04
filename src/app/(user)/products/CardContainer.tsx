@@ -43,7 +43,10 @@ function Card() {
     (newParams: Record<string, string>) => {
       const params = new URLSearchParams(Array.from(searchParams.entries()));
       Object.keys(newParams).forEach((key) => {
-        params.set(key, newParams[key]);
+        if (newParams[key] === "") params.delete(key);
+        else {
+          params.set(key, newParams[key]);
+        }
       });
 
       const newUrl = `?${params.toString()}`;

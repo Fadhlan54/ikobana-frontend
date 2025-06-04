@@ -60,3 +60,18 @@ export interface Category {
   ID: number;
   name: string;
 }
+
+export interface ProductDetailsResponse {
+  ID: number;
+  CreatedAt: string;
+  UpdatedAt: string;
+  DeletedAt: string;
+  name: string;
+  description: string;
+  category_id: number;
+  stock: number;
+  image_url: string;
+  weight_per_unit: number;
+  price: number;
+  category: Category;
+}
