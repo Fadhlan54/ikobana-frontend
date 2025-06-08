@@ -14,6 +14,11 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Ikobana Frozen Food",
   description: "Ikobana Frozen Food",
+  openGraph: {
+    title: "Ikobana Frozen Food",
+    description: "Ikobana Frozen Food",
+  },
+  keywords: ["ikobana", "frozen", "food", "ikobanafrozenfood"],
 };
 
 export default function RootLayout({
